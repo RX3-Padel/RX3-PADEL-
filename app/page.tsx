@@ -1,7 +1,82 @@
 // app/page.tsx
 "use client";
 
-import Image from "next/image";
+import Image from "import Image from "next/image";
+import { useEffect, useState } from "react";
+const COURT_IMAGES = ["/court-1.jpg", "/court-2.jpg", "/court-3.jpg"];
+
+function CourtCarousel() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % COURT_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10">
+      <Image
+        src={COURT_IMAGES[index]}
+        alt="RX3 Padel Courts"
+        fill
+        className="object-cover"
+        priority
+      />
+    </div>
+  );
+}
+
+
+function CourtCarousel() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % COURT_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10">
+      <Image
+        src={COURT_IMAGES[index]}
+        alt="RX3 Padel Courts"
+        fill
+        className="object-cover transition-opacity duration-700"
+        priority
+      />
+    </div>
+  );
+}
+
+
+function CourtCarousel() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % COURT_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-white/10">
+      <Image
+        src={COURT_IMAGES[index]}
+        alt="RX3 Padel Courts"
+        fill
+        className="object-cover transition-opacity duration-700"
+        priority
+      />
+    </div>
+  );
+}
+
+
 
 export default function Page() {
   return (
@@ -12,8 +87,8 @@ export default function Page() {
           <Image
             src="/rx3-logo.png"
             alt="RX3 Padel"
-            width={48}
-            height={48}
+            width={80}
+            height={80}
           />
           <span className="tracking-[0.25em] text-sm">
             RX3 PADEL
@@ -51,7 +126,10 @@ export default function Page() {
           >
             Book a Court
           </a>
+        </div>        <div>
+          <CourtCarousel />
         </div>
+
 
         <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-[#C8A24A]/30">
           <Image
