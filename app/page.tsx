@@ -40,17 +40,23 @@ export default function Page() {
       {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Image
-            src="/rx3-logo.png"
-            alt="RX3 Padel"
-            width={200}
-            height={200}
-            priority
-          />
-          <span className="tracking-[0.25em] text-sm">
-            RX3 PADEL
-          </span>
-        </div>
+  <Image
+    src="/rx3-logo.png"
+    alt="RX3 Padel"
+    width={200}
+    height={200}
+    priority
+  />
+  <div className="leading-tight">
+    <div className="tracking-[0.25em] text-sm">
+      RX3 PADEL
+    </div>
+    <div className="text-xs text-[#C8A24A] mt-1">
+      Elevating fitness, strengthening community
+    </div>
+  </div>
+</div>
+
 
         <nav className="hidden md:flex gap-8 text-sm text-[#F4F3EF]/80">
           <a href="#club">The Club</a>
