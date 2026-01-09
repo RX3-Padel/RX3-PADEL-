@@ -36,12 +36,13 @@ function CourtCarousel() {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#0A2F1F] text-[#F4F3EF]">
+    <main className="min-h-screen bg-[#0B1F3A] text-white">
+
       {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
   <Image
-    src="/rx3-logo.png"
+    src="/rx3-logo-navy.png"
     alt="RX3 Padel"
     width={200}
     height={200}
@@ -76,6 +77,10 @@ export default function Page() {
             A new standard for padel<br />
             in the United Kingdom
           </h1>
+          <p className="text-lg text-[#C8A24A] font-medium mb-4">
+  Elevating fitness, strengthening community
+</p>
+
 
           <p className="text-lg text-[#F4F3EF]/85 max-w-xl mb-8">
             RX3 Padel delivers premium courts, coaching and community-led wellbeing across carefully selected UK locations.
@@ -109,6 +114,51 @@ export default function Page() {
           </p>
         </div>
       </section>
+      {/* COMMUNITY IMPACT */}
+<section className="bg-[#0B1F3A] py-24">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <p className="uppercase tracking-[0.35em] text-xs text-[#C8A24A] mb-4">
+      Community Impact
+    </p>
+
+    <h2 className="text-4xl font-semibold mb-6 text-white">
+      Elevating fitness, strengthening community
+    </h2>
+
+    <p className="max-w-3xl mx-auto text-lg text-white/80 mb-16">
+      RX3 Padel works with local authorities, schools and community groups
+      to deliver accessible, inclusive padel facilities that support physical
+      health, mental wellbeing and social connection across all ages.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-12 text-white">
+      <div>
+        <h3 className="text-xl font-semibold mb-2">Youth Programmes</h3>
+        <p className="text-white/75">
+          Introducing young people to padel through schools, clubs and
+          affordable coaching pathways.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-xl font-semibold mb-2">Inclusive Adult Play</h3>
+        <p className="text-white/75">
+          Social sessions, leagues and beginner-friendly formats that welcome
+          all abilities.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-xl font-semibold mb-2">Health & Wellbeing</h3>
+        <p className="text-white/75">
+          Supporting active lifestyles through fun, low-impact and highly
+          social sport.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* LOCATIONS */}
       <section id="locations" className="max-w-6xl mx-auto px-6 py-20">
