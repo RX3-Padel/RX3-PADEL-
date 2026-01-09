@@ -3,7 +3,7 @@
 
 import Image from "import Image from "next/image";
 import { useEffect, useState } from "react";
-const COURT_IMAGES = ["/court-1.jpg", "/court-2.jpg", "/court-3.jpg"];
+const COURT_IMAGES = ["/court-1.jpg", "/court-2.jpg","/court-3.jpg", "/court-4.jpg"];
 
 function CourtCarousel() {
   const [index, setIndex] = useState(0);
@@ -87,8 +87,8 @@ export default function Page() {
           <Image
             src="/rx3-logo.png"
             alt="RX3 Padel"
-            width={80}
-            height={80}
+            width={200}
+            height={200}
           />
           <span className="tracking-[0.25em] text-sm">
             RX3 PADEL
