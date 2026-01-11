@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 
 const COURT_IMAGES = [
   "/court-1.jpg",
@@ -33,6 +34,119 @@ function CourtCarousel() {
     </div>
   );
 }
+const logos = [
+  { src: "/rx3-logo.png", label: "Primary" },
+  { src: "/rx3-logo-blue.png", label: "Blue" },
+  { src: "/rx3-logo-black.jpg", label: "Black" },
+  { src: "/rx3-logo-horizontal-strapline.png", label: "Strapline" },
+]
+
+function LogoPicker() {
+  const [index, setIndex] = useState(0);
+  const total = logos.length;
+
+  // swipe handling
+  const startX = useRef<number | null>(null);
+  const startY = useRef<number | null>(null);
+
+
+  const prev = () => setIndex((i) => (i - 1 + total) % total);
+  const next = () => setIndex((i) => (i + 1) % total);
+
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+
+    const t = e.touches[0];
+    startX.current = t.clientX;
+    startY.current = t.clientY;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+
+    if (startX.current == null || startY.current == null) return;
+
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX.current;
+    const dy = t.clientY - startY.current;
+
+    // ignore mostly vertical (scroll)
+    if (Math.abs(dy) > Math.abs(dx)) {
+      startX.current = null;
+      startY.current = null;
+      return;
+    }
+
+    if (dx > 40) prev();
+    if (dx < -40) next();
+
+    startX.current = null;
+    startY.current = null;
+  };
+
+  // Optional: auto-rotate (comment out if you want manual only)
+  useEffect(() => {
+    const t = setInterval(() => setIndex((i) => (i + 1) % total), 3500);
+    return () => clearInterval(t);
+  }, [total]);
+
+  return (
+    <div className="col-span-full w-full flex flex-col items-center justify-center gap-4">
+      <div
+        className="relative w-[95vw] max-w-[1400px] aspect-[5/2] select-none"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        role="group"
+        aria-label="Logo selector"
+      >
+        <Image
+          key={logos[index].src}
+          src={logos[index].src}
+          alt={`RX3 Padel logo – ${logos[index].label}`}
+          fill
+          priority
+          className="object-contain"
+          draggable={false}
+        />
+
+        <button
+          type="button"
+          onClick={prev}
+          aria-label="Previous logo"
+          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label="Next logo"
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-3 py-2 shadow hover:bg-white"
+        >
+          ›
+        </button>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <span className="text-sm text-white/80">{logos[index].label}</span>
+        <div className="flex gap-2">
+          {logos.map((l, i) => (
+            <button
+              key={l.src}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Select ${l.label}`}
+              className={`h-2.5 w-2.5 rounded-full ${
+                i === index ? "bg-white" : "bg-white/30"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <p className="text-xs text-white/60">Swipe left/right to change logo</p>
+    </div>
+  );
+}
+
 
 export default function Page() {
   return (
@@ -63,41 +177,12 @@ export default function Page() {
 </header>
 
 
+  
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p className="uppercase tracking-[0.35em] text-xs mb-4 text-[#C8A24A]">
-            Premium Padel Clubs
-          </p>
+<section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+  <LogoPicker />
+</section>
 
-          <h1 className="text-5xl font-semibold leading-tight mb-6">
-            A new standard for padel<br />
-            in the United Kingdom
-          </h1>
-          <p className="text-lg text-[#C8A24A] font-medium mb-4">
-  Elevating fitness, strengthening community
-</p>
-
-
-          <p className="text-lg text-[#F4F3EF]/85 max-w-xl mb-8">
-            RX3 Padel delivers premium courts, coaching and community-led wellbeing across carefully selected UK locations.
-          </p>
-
-          <a
-            href="#booking"
-            className="inline-block bg-[#C8A24A] text-[#0A2F1F] px-8 py-3 font-semibold rounded-md hover:bg-[#d6b35c] transition"
-          >
-            Book via Matchpoint
-          </a>
-        </div>
-
-        <div>
-          <CourtCarousel />
-          <p className="mt-3 text-sm text-[#F4F3EF]/70">
-            Rotating gallery • court-1.jpg → court-4.jpg
-          </p>
-        </div>
-      </section>
 
       {/* THE CLUB */}
       <section id="club" className="bg-[#F4F3EF] text-[#0A2F1F] py-20">
