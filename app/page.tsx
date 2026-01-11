@@ -157,16 +157,10 @@ export default function Page() {
 
 <header className="max-w-6xl mx-auto px-6 py-6">
   {/* Logo full-width */}
-  <div className="relative w-full h-[180px] sm:h-[180px] md:h-[210px] lg:h-[280px]">
-    <Image
-      src="/rx3-logo-blue.png"
+  <div className="w-full">
+  <LogoPicker />
+</div>
 
-      alt="RX3 Padel – Elevating fitness, strengthening community"
-      fill
-      className="object-contain"
-      priority
-    />
-  </div>
 
   {/* Nav under logo, right aligned */}
   <nav className="mt-4 flex justify-end gap-8 text-sm text-white/80">
@@ -179,9 +173,7 @@ export default function Page() {
 
   
       {/* HERO */}
-<section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-  <LogoPicker />
-</section>
+
 
 
       {/* THE CLUB */}
