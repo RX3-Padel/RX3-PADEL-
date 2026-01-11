@@ -41,10 +41,9 @@ export default function Page() {
       {/* HEADER */}
      
 
-<header className="max-w-6xl mx-auto px-6 py-10 flex items-center justify-between">
-
-  <div className="relative w-[320px] sm:w-[480px] md:w-[720px] lg:w-[920px] h-[140px]">
-
+<header className="max-w-6xl mx-auto px-6 py-6">
+  {/* Logo full-width */}
+  <div className="relative w-full h-[180px] sm:h-[180px] md:h-[210px] lg:h-[280px]">
     <Image
       src="/rx3-logo-horizontal-strapline.png"
       alt="RX3 Padel – Elevating fitness, strengthening community"
@@ -54,12 +53,14 @@ export default function Page() {
     />
   </div>
 
-  <nav className="hidden md:flex gap-8 text-sm text-white/80">
-    <a href="#club">The Club</a>
-    <a href="#locations">Locations</a>
-    <a href="#booking">Book</a>
+  {/* Nav under logo, right aligned */}
+  <nav className="mt-4 flex justify-end gap-8 text-sm text-white/80">
+    <a href="#club" className="hover:text-white transition">The Club</a>
+    <a href="#locations" className="hover:text-white transition">Locations</a>
+    <a href="#booking" className="hover:text-white transition">Book</a>
   </nav>
 </header>
+
 
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
