@@ -45,7 +45,8 @@ export default function Page() {
   {/* Logo full-width */}
   <div className="relative w-full h-[180px] sm:h-[180px] md:h-[210px] lg:h-[280px]">
     <Image
-      src="/rx3-logo-horizontal-strapline.png"
+      src="/rx3-logo-blue.png"
+
       alt="RX3 Padel – Elevating fitness, strengthening community"
       fill
       className="object-contain"
