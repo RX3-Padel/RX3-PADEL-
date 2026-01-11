@@ -14,12 +14,12 @@ const COURT_IMAGES = [
 function CourtCarousel() {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % COURT_IMAGES.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % COURT_IMAGES.length);
+  //   }, 3500);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[#C8A24A]/30">
