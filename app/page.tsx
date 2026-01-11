@@ -39,18 +39,12 @@ export default function Page() {
     <main className="min-h-screen bg-[#0B1F3A] text-white">
 
       {/* HEADER */}
-     <div className="relative w-[260px] sm:w-[360px] md:w-[520px] lg:w-[640px] h-[110px]">
-  <Image
-    src="/rx3-logo-horizontal-strapline.png"
-    alt="RX3 Padel – Elevating fitness, strengthening community"
-    fill
-    className="object-contain"
-    priority
-  />
-</div>
+     
 
-<header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-  <div className="relative w-[260px] sm:w-[360px] md:w-[520px] lg:w-[640px] h-[110px]">
+<header className="max-w-6xl mx-auto px-6 py-10 flex items-center justify-between">
+
+  <div className="relative w-[320px] sm:w-[480px] md:w-[720px] lg:w-[920px] h-[140px]">
+
     <Image
       src="/rx3-logo-horizontal-strapline.png"
       alt="RX3 Padel – Elevating fitness, strengthening community"
