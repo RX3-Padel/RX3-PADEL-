@@ -40,25 +40,29 @@ export default function Page() {
 
       {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-  <div className="relative w-[280px] sm:w-[360px] md:w-[520px] h-[110px]">
-  <Image
-    src="/rx3-logo-horizontal-strapline.png"
-    alt="RX3 Padel – Elevating fitness, strengthening community"
-    fill
-    className="object-contain"
-    priority
-  />
-</div>
+  <div className="flex items-center gap-4">
+    <Image
+      src="/rx3-logo-navy.png"
+      alt="RX3 Padel"
+      width={200}
+      height={200}
+      priority
+    />
 
+    <div className="leading-tight">
+      <div className="tracking-[0.25em] text-sm">RX3 PADEL</div>
+      <div className="text-xs text-[#C8A24A] mt-1">
+        Elevating fitness, strengthening community
+      </div>
+    </div>
+  </div>
 
-
-        <nav className="hidden md:flex gap-8 text-sm text-[#F4F3EF]/80">
-          <a href="#club">The Club</a>
-          <a href="#locations">Locations</a>
-          <a href="#booking">Book</a>
-        </nav>
-      </header>
+  <nav className="hidden md:flex gap-8 text-sm text-white/80">
+    <a href="#club">The Club</a>
+    <a href="#locations">Locations</a>
+    <a href="#booking">Book</a>
+  </nav>
+</header>
 
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
