@@ -166,29 +166,34 @@ export default function Page() {
       </section>
 
       {/* BOOKING */}
-      {/* BOOKING */}
 <section id="booking" className="bg-white text-[#0B1F3A] py-20">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-semibold mb-4">Play at RX3 Padel</h2>
+    <p className="text-lg mb-8">
+      Book courts, sessions and events via our booking platform.
+    </p>
 
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-4">Play at RX3 Padel</h2>
-          <p className="text-lg mb-8">Book courts, sessions and events via our booking platform.</p>
-          <a
-           <a
-  href="https://matchpoint.com"
-  target="_blank"
-  rel="noreferrer"
-  className="inline-block bg-[#C8A24A] text-[#0B1F3A] px-8 py-3 font-semibold rounded-md hover:bg-[#d6b35c] transition"
->
-  Book via Matchpoint
-</a>
+    <a
+      href="https://matchpoint.com"
+      target="_blank"
+      rel="noreferrer"
+      className="inline-block bg-[#C8A24A] text-[#0B1F3A] px-8 py-3 font-semibold rounded-md hover:bg-[#d6b35c] transition"
+    >
+      Book via Matchpoint
+    </a>
+  </div>
+</section>
 
-        </div>
-      </section>
+<footer className="bg-[#0B1F3A] py-8 text-center text-sm text-white/60">
+  © {new Date().getFullYear()} RX3 Padel. All rights reserved.
+</footer>
 
-      <footer className="bg-[#0B1F3A]">
- py-8 text-center text-sm text-[#F4F3EF]/60">
-        © {new Date().getFullYear()} RX3 Padel. All rights reserved.
-      </footer>
+
+
+     <footer className="bg-[#0B1F3A] py-8 text-center text-sm text-white/60">
+  © {new Date().getFullYear()} RX3 Padel. All rights reserved.
+</footer>
+
     </main>
   );
 }
