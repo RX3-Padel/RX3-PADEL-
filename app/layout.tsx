@@ -13,17 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RX3 Padel | Premium Padel Clubs in the UK",
+  metadataBase: new URL("https://rx3-padel.vercel.app"),
+  title: "PX3 Padel Club | Premium Padel Clubs in the UK",
   description:
-    "RX3 Padel develops premium padel clubs across the UK, combining world-class facilities with inclusive community programmes.",
+    "PX3 Padel Club develops premium padel clubs across the UK, combining world-class facilities with inclusive community programmes.",
   openGraph: {
-    title: "RX3 Padel",
+    title: "PX3 Padel Club",
     description:
       "Premium padel clubs designed for performance, community and wellbeing.",
     images: ["/rx3-og.jpg"],
-  
   },
 };
+
+
+
+
+
 
 
 export default function RootLayout({
