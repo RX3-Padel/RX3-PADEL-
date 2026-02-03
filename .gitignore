@@ -38,4 +38,16 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+next-env.d.ts# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+
+# Ignore local installers / apps / zips
+coding file/
+*.pkg
+*.zip
+*.app
